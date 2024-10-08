@@ -1,5 +1,4 @@
-node_modules
-dist
+src/
+node_modules/
 webpack.config.js
 .babelrc
-public

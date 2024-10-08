@@ -4,7 +4,7 @@ export const fetchTrendsList = async (apiUrl, apiKey) => {
   try {
     const response = await axios.get(`${apiUrl}/trend/list`, {
       headers: {
-        Authorization: `Bearer ${apiKey}`,
+        'api_key': `${apiKey}`,
       },
     });
     return response.data;
@@ -18,7 +18,7 @@ export const fetchTrendDetail = async (apiUrl, apiKey, trendId) => {
   try {
     const response = await axios.get(`${apiUrl}/trend/detail/${trendId}`, {
       headers: {
-        Authorization: `Bearer ${apiKey}`,
+        'api_key': `${apiKey}`,
       },
     });
     return response.data;

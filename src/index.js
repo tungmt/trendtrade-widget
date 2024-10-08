@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { TrendList } from './components/TrendList';
 import { TrendDetail } from './components/TrendDetail';
+import { Stack } from '@mui/material';
 
 const TrendLibrary = ({ apiUrl, apiKey }) => {
   const [selectedTrendId, setSelectedTrendId] = useState(null);
@@ -14,13 +15,13 @@ const TrendLibrary = ({ apiUrl, apiKey }) => {
   };
 
   return (
-    <div>
+    <Stack>
       {!selectedTrendId ? (
         <TrendList apiUrl={apiUrl} apiKey={apiKey} onSelectTrend={handleSelectTrend} />
       ) : (
         <TrendDetail apiUrl={apiUrl} apiKey={apiKey} trendId={selectedTrendId} onBack={handleBack} />
       )}
-    </div>
+    </Stack>
   );
 };
 

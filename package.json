@@ -1,15 +1,13 @@
 {
   "name": "trendtrade-widget",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "NPM Library to display trends with details using API.",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/tungmt/trendtrade-widget"
   },
   "dependencies": {
-    "@babel/preset-env": "^7.25.7",
-    "@babel/preset-react": "^7.25.7",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@mui/material": "^6.1.2",
@@ -24,7 +22,7 @@
     "react": ">=16.8.0"
   },
   "scripts": {
-    "build": "webpack --mode production",
+    "build": "babel src --out-dir dist --copy-files",
     "start": "webpack serve --mode development"
   },
   "keywords": [
@@ -35,6 +33,9 @@
   "author": "TrendTrade",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.25.7"
+    "@babel/cli": "^7.25.7",
+    "@babel/core": "^7.25.7",
+    "@babel/preset-env": "^7.25.7",
+    "@babel/preset-react": "^7.25.7"
   }
 }
