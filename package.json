@@ -1,6 +1,6 @@
 {
   "name": "trendtrade-widget",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "NPM Library to display trends with details using API.",
   "main": "src/index.js",
   "repository": {
