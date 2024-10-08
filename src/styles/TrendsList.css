@@ -1,0 +1,86 @@
+.horizontal-list {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px;
+  background-color: #f8f9fa; /* Light background color */
+  border-radius: 8px; /* Rounded corners for the background */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for styling */
+}
+
+.list-item {
+  display: inline-block;
+  margin: 0 10px;
+  font-family: Arial, sans-serif;
+  padding: 10px; /* Padding around each item */
+  background-color: white; /* Background color for each item */
+  border-radius: 5px; /* Rounded corners for each item */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for each item */
+}
+
+.list-item:not(:last-child) {
+  border-right: 1px solid #ddd; /* Separator between items */
+}
+
+.list-item span {
+  margin-right: 8px;
+}
+
+.list-item span:nth-child(3) {
+  font-weight: bold; /* Make the last text bold */
+}
+
+.positive {
+  color: rgba(61, 175, 65, 1);
+}
+
+.negative {
+  color: red;
+}
+
+.open-popup-btn {
+  position: absolute;
+  right: 0;
+  padding: 10px;
+  background-color: #6a00ff;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-right: 10px;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .list-item {
+    font-size: 14px;
+    margin: 0 5px; /* Reduced margin for smaller screens */
+  }
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ensure spinner is centered in the available space */
+}
+
+.spinner {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #6a00ff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

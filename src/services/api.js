@@ -1,13 +1,19 @@
-import axios from 'axios';
-
 export const fetchTrendsList = async (apiUrl, apiKey) => {
   try {
-    const response = await axios.get(`${apiUrl}/trend/list`, {
+    const response = await fetch(`${apiUrl}/trend/list`, {
+      method: 'POST',
+      body: JSON.stringify({apiKey}),
       headers: {
-        'api_key': `${apiKey}`,
+        'Content-Type': 'application/json',
       },
     });
-    return response.data;
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data
   } catch (error) {
     console.error('Error fetching trends:', error);
     return [];
@@ -16,12 +22,20 @@ export const fetchTrendsList = async (apiUrl, apiKey) => {
 
 export const fetchTrendDetail = async (apiUrl, apiKey, trendId) => {
   try {
-    const response = await axios.get(`${apiUrl}/trend/detail/${trendId}`, {
+    const response = await fetch(`${apiUrl}/trend/detail`, {
+      method: 'POST',
+      body: JSON.stringify({apiKey, trendId}),
       headers: {
-        'api_key': `${apiKey}`,
+        'Content-Type': 'application/json',
       },
     });
-    return response.data;
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data
   } catch (error) {
     console.error('Error fetching trend detail:', error);
     return null;
