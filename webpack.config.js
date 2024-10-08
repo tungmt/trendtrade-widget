@@ -6,7 +6,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
     library: 'TrendLibrary',
-    libraryTarget: 'umd',
+    libraryTarget: 'umd', 
     umdNamedDefine: true,
   },
   resolve: {
@@ -15,15 +15,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx)$/, 
         exclude: /node_modules/,
-        use: 'babel-loader',
+        use: {
+          loader: 'babel-loader',
+        },
       },
     ],
   },
-  devServer: {
-    contentBase: path.join(__dirname, 'public'),
-    compress: true,
-    port: 9000,
+  externals: {
+    react: 'React', 
+    'react-dom': 'ReactDOM',
   },
 };
